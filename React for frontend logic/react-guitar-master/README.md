@@ -1,4 +1,4 @@
-# React-Guitar &middot; [![npm version](https://img.shields.io/npm/v/react-guitar.svg?style=flat)](https://www.npmjs.com/package/react-guitar)
+# Alternate-Tuning-Guitar &middot; [![npm version](https://img.shields.io/npm/v/react-guitar.svg?style=flat)](https://www.npmjs.com/package/react-guitar)
 
 A beautiful and accessible guitar component for React.
 
@@ -42,33 +42,6 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 | `playOnHover`  | A boolean to indicate if hovering with the mouse should trigger play events.                                                                                                                                                              |
 | `onChange`     | A function `(strings: number[]) => void` that will be called when a string is press/unpressed. If not present the guitar will be read only.                                                                                               |
 | `onPlay`       | A function `(string: number) => void` that will be called each time the user plays a string (hovering with the mouse). This can be used to play the sound of the string.                                                                  |
-
-### Hooks
-
-#### useSound
-
-In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar-sound) hook:
-
-```
-npm i react-guitar react-guitar-sound react-guitar-tunings
-```
-
-```jsx
-import React, { useMemo } from 'react'
-import { render } from 'react-dom'
-import Guitar from 'react-guitar'
-import { standard } from 'react-guitar-tunings'
-import useSound from 'react-guitar-sound'
-
-function SampleGuitarWithSound() {
-  const strings = useMemo(() => [0, 1, 2, 2, 0, -1], [])
-  const { play, strum } = useSound({ fretting: strings, tuning: standard })
-
-  return <Guitar strings={strings} onPlay={play} />
-}
-
-render(<SampleGuitarWithSound />, document.getElementById('root'))
-```
 
 
 
